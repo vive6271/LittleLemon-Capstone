@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from .models import Menu, Booking
 from rest_framework import viewsets, generics
 from rest_framework.permissions import IsAuthenticated
@@ -5,8 +6,8 @@ from django.contrib.auth.models import User
 from .serializers import UserSerializer, MenuSerializer, BookingSerializer
 
 
-# def index(request):
-#     return render(request, 'index.html', {})
+def index(request):
+    return render(request, 'index.html', {})
 
 class UserViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
